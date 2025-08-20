@@ -28,31 +28,67 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QueuingForm));
             btnCashier = new Button();
+            lblQueue = new Label();
+            label1 = new Label();
             SuspendLayout();
             // 
             // btnCashier
             // 
-            btnCashier.Location = new Point(27, 59);
+            btnCashier.BackColor = Color.Transparent;
+            btnCashier.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCashier.Location = new Point(42, 45);
             btnCashier.Name = "btnCashier";
-            btnCashier.Size = new Size(89, 92);
+            btnCashier.Size = new Size(99, 111);
             btnCashier.TabIndex = 0;
             btnCashier.Text = "Cashier";
-            btnCashier.UseVisualStyleBackColor = true;
+            btnCashier.UseVisualStyleBackColor = false;
+            btnCashier.Click += btnCashier_Click;
+            // 
+            // lblQueue
+            // 
+            lblQueue.AutoSize = true;
+            lblQueue.BackColor = Color.Transparent;
+            lblQueue.Font = new Font("Segoe UI", 32.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblQueue.ForeColor = Color.Yellow;
+            lblQueue.Location = new Point(218, 95);
+            lblQueue.Name = "lblQueue";
+            lblQueue.Size = new Size(0, 59);
+            lblQueue.TabIndex = 1;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(231, 45);
+            label1.Name = "label1";
+            label1.Size = new Size(189, 30);
+            label1.TabIndex = 2;
+            label1.Text = "Position In Queue";
             // 
             // QueuingForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(484, 261);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(484, 211);
+            Controls.Add(label1);
+            Controls.Add(lblQueue);
             Controls.Add(btnCashier);
             Name = "QueuingForm";
             Text = "Form1";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private Button btnCashier;
+        private Label lblQueue;
+        private Label label1;
     }
 }
