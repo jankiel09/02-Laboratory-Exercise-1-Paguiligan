@@ -33,6 +33,8 @@
             btnNext = new Button();
             listCashierQueue = new ListView();
             timer1_tick = new Label();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // btnRefresh
@@ -59,9 +61,10 @@
             // 
             // listCashierQueue
             // 
+            listCashierQueue.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             listCashierQueue.Location = new Point(93, 12);
             listCashierQueue.Name = "listCashierQueue";
-            listCashierQueue.Size = new Size(179, 237);
+            listCashierQueue.Size = new Size(229, 237);
             listCashierQueue.TabIndex = 2;
             listCashierQueue.UseCompatibleStateImageBehavior = false;
             listCashierQueue.View = View.List;
@@ -76,13 +79,24 @@
             timer1_tick.TabIndex = 3;
             timer1_tick.Click += timer1_tick_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.Location = new Point(26, 202);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(45, 42);
+            pictureBox1.TabIndex = 4;
+            pictureBox1.TabStop = false;
+            // 
             // CashierWindowQueue
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Center;
-            ClientSize = new Size(284, 261);
+            ClientSize = new Size(334, 261);
+            Controls.Add(pictureBox1);
             Controls.Add(timer1_tick);
             Controls.Add(listCashierQueue);
             Controls.Add(btnNext);
@@ -90,6 +104,7 @@
             Name = "CashierWindowQueue";
             Text = "Form2";
             Load += CashierWindowQueueForm_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -100,5 +115,6 @@
         private Button btnNext;
         private ListView listCashierQueue;
         private Label timer1_tick;
+        private PictureBox pictureBox1;
     }
 }

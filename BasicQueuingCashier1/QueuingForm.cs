@@ -7,18 +7,22 @@ namespace BasicQueuingCashier1
         {
             InitializeComponent();
             cashier = new CashierClass();
+
+            // Show both forms
             CashierWindowQueue queue = new CashierWindowQueue();
             queue.Show();
 
+            CustomerView customerView = new CustomerView();
+            customerView.Show();
         }
 
         private void btnCashier_Click(object sender, EventArgs e)
         {
-            lblQueue.Text = cashier.CashierGeneratedNumber("P - ");
-            CashierClass.getNumberInQueue = lblQueue.Text;
-            CashierClass.CashierQueue.Enqueue(CashierClass.getNumberInQueue);
-
-            
+            string newNumber = cashier.CashierGeneratedNumber("P - ");
+            lblQueue.Text = newNumber;
+            CashierClass.getNumberInQueue = newNumber;
+            CashierClass.CashierQueue.Enqueue(newNumber);
         }
     }
 }
+
